@@ -1,0 +1,5 @@
+# Ignore everything
+*
+
+# Only allow specific config folders here
+!/nvim/**/*
