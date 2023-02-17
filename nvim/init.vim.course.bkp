@@ -1,0 +1,40 @@
+" Sets
+set scrolloff=10
+set number
+set relativenumber
+
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+" Plugin manager & plugins here
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'mhinz/vim-startify'
+Plug 'ayu-theme/ayu-vim'
+Plug 'ghifarit53/tokyonight-vim'
+call plug#end()
+
+" Make eyes hurt less
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
+
+" Remaps & nice shortcuts
+let mapleader = " "
+nnoremap <leader>pv :Vex<CR>
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+nnoremap <C-p> :FZF<CR>
+" @TODO: Fix this for non repo files (Project Files) (when installing Telescope?)
+" nnoremap <leader>pf :Files<CR>
+
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>

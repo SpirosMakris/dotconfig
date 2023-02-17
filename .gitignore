@@ -1,5 +1,10 @@
 # Ignore everything
 *
 
+# But descent into directories
+!*/
 # Only allow specific config folders here
 !/nvim/**/*
+
+# Ignore all files in the pack subdir
+/nvim/pack/**/*
